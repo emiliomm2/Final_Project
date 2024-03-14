@@ -62,41 +62,33 @@
                                 <label><img src="../imagenes/notas.png" class="icon"/> Mis notas</label>
                             </a>
                         </li>
-                    </ul>
-                    <ul class="menu_foot">
-                        <li class="mode">
-                            <a href="#" onclick="document.body.classList.toggle('dark-mode');setCookie('color_theme', document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode'); return false;">
-                                <div class="toggle-mode">
-                                    ::before
-                                </div>
-                                <div class="label">Modo Oscuro</div>
-                            </a>
+                        <br><br><br>
+                        <li>
+                            <button id="cambio-modo">Modo oscuro</button>
                         </li>
                     </ul>
             </nav>
+            <br><br><br>
             <div class="central_contenedor">
-                <img class="background" src="../imagenes/light.png"/>
+                <img class="background" id="background" src="../imagenes/light.png"/>
                 <header class="site-header">
                     <form class="form-search" method="get">
                         <label>
                         <img class="icon" src="../imagenes/lupa.png"/>
                                 <input type="text" id="header-search-input" class="autoComplete" dir="ltr" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off" maxlength="1000" tabindex="1" placeholder="Buscar" aria-controls="autoComplete_list_1" aria-autocomplete="both" aria-activedescendant>
-                                <ul id="autoComplete_list_1" role="listbox" class="autoComplete_list" hidden>
-                                    <li></li>
-                                </ul>
                         </label>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href=""><img src="../imagenes/mensajes.png" class="icon"/></a>
                         
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href=""><img src="../imagenes/alertas.png" class="icon"/></a>
-                        
+                    </form>     
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <img loading="lazy" src="" alt="Imagen de perfil" class="user-img"/>
-                        <a href="">Mi perfil</a>
-                        <button><a href="../php/cerrar_sesion.php">Cerrar sesión</a></button>
-                    </form>
-                    
+                    <div class="user-img-container">
+                        <img src="../imagenes/planta.png" class="user-img" id="user-img" onclick="mostrarEnlaces()"/>
+                        <a href="" class="enlaces" id="mi-perfil">Mi perfil</a></option>
+                        <a href="../php/cerrar_sesion.php" class="enlaces" id="cerrar-sesion">Cerrar sesión</a>
+                    </div>
                 </header>
                 <div class="titulo">
                     <h1>Bienvenido <?php echo "$username";?></h1>
@@ -111,5 +103,6 @@
                 </div>
             </div>
         </div>
+        <script src="plataforma.js"></script>
     </body>
 </html>

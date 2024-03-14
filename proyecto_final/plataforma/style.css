@@ -13,6 +13,7 @@
 }
 .contenedor{
     width: 500px;
+    max-height: 750px;
     padding: 20px;
     background-color: white;
     margin: auto;
@@ -27,7 +28,7 @@
     left: 0px;
     top: 250px;
     margin: auto;
-    height: 100%;
+    height: 750px;
     background-color: white;
     width: 150px;
     align-items: left;
@@ -38,8 +39,8 @@
     height: 20px;
     margin-right: 10px;
 }
-.menu_foot{
-    position: relative;
+.label{
+    position: fixed;
     margin: auto;
     top: 650px;
     right: 150px;
@@ -57,10 +58,6 @@ ul{
     list-style: none;
 }
 header{
-    position: relative;
-    bottom: 200px;
-    left: 500px;
-    text-align: right;
     margin: auto;
     width: auto;
     height: auto;
@@ -73,34 +70,97 @@ header{
     height:100%;
     width: 100%;
     z-index: -1;
+    overflow: scroll;
 }
 .main_navigation{
-    position: relative;
+    position: fixed;
     right: 700px;
     z-index: 1;
 }
 h1{
-    position: absolute;
+    position: fixed;
     left: -400px;
     top: -150px;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
+    z-index: 1;
 }
 .sigue_aprendiendo{
-    position: absolute;
+    position: relative;
     background-color: hsla(34, 100%, 100%, 0.6);
     border-radius: 25px;
     margin: auto;
+    bottom: 100px;
     padding-top: 10px;
     padding-left: 10px;
-    top: -50px;
-    left: -400px;
-    padding-bottom: 200px;
-    padding-right: 500px;
+    padding-bottom: 400px;
+    padding-right: 400px;
+    align-items:center;
 }
 iframe{
-    position: relative;
+    position: absolute;
     margin-left: 30px;
-    width: 600px;
+    width: 480px;
     height: 300px;
+    z-index: 2;
+}
+.form-search{
+    position: relative;
+    text-align: center;
+    bottom: 200px;
+    right: 30px;
+}
+body{
+    overflow: scroll;
+}
+.user-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    max-width: 100px;
+}
+.enlaces{
+    display: none;
+    position: absolute;
+    background-color: lightgray;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.user-img-container{
+    position: relative;
+    text-align: center;
+    bottom: 250px;
+    left: 165px;
+}
+#mi-perfil{
+    top: 35px;
+    left: 243px;
+    margin-right: 15px;
+}
+#cerrar-sesion{
+    top: 75px;
+    left: 243px;
+}
+.modo-oscuro {
+    background-color: black;
+    color: white;
+}
+.modo-oscuro .logo {
+    filter: invert(1);
+}
+.modo-oscuro .main_menu{
+    background-color: black;
+}
+.modo-oscuro .icon{
+    filter: invert(1);
+}
+.modo-oscuro a{
+    color: white;
+}
+a {
+    text-decoration: none;
+}
+.autoComplete{
+    opacity: 0.6;
 }
