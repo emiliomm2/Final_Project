@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeStudy - Inicio de Sesion</title>
+    <link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../imagenes/favicon.ico" type="image/x-icon">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <img src="../imagenes/truenos.png" class="fondo">
+    <div class="container">
+        <form action="../php/login_usuario_be.php" method="POST" class="formulario" novalidate>
+            <a href="../Inicio/index.html">
+                <img src="../imagenes/Logo.png">
+            </a>
+            <div class="padre">
+                <h1>CodeStudy</h1>
+                <div class="email">
+                    <label for="">Correo electrónico</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="password">
+                    <label for="">Contraseña</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="cuenta">
+                    <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
+                    <input class="boton" type="submit" value="Iniciar sesión">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./inicio_sesion.js"></script>
+</body>
+</html>
