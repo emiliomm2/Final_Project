@@ -1,0 +1,106 @@
+.logo{
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: white;
+    margin: auto;
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    padding-right: 10px;
+}
+.contenedor{
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    margin: auto;
+    text-align: left;
+    border-radius: 25px;
+    position: relative;
+    align-items: center;
+    top: 150px;
+}
+.main_menu{
+    position: fixed;
+    left: 0px;
+    top: 250px;
+    margin: auto;
+    height: 100%;
+    background-color: white;
+    width: 150px;
+    align-items: left;
+
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.menu_foot{
+    position: relative;
+    margin: auto;
+    top: 650px;
+    right: 150px;
+    bottom: 20px;
+    text-align: left;
+    align-items: left;
+    background-color: white;
+    width: 120px;
+    z-index: 2;
+}
+.central_contenedor{
+    position: fixed;
+}
+ul{
+    list-style: none;
+}
+header{
+    position: relative;
+    bottom: 200px;
+    left: 500px;
+    text-align: right;
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+.background{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height:100%;
+    width: 100%;
+    z-index: -1;
+}
+.main_navigation{
+    position: relative;
+    right: 700px;
+    z-index: 1;
+}
+h1{
+    position: absolute;
+    left: -400px;
+    top: -150px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.sigue_aprendiendo{
+    position: absolute;
+    background-color: hsla(34, 100%, 100%, 0.6);
+    border-radius: 25px;
+    margin: auto;
+    padding-top: 10px;
+    padding-left: 10px;
+    top: -50px;
+    left: -400px;
+    padding-bottom: 200px;
+    padding-right: 500px;
+}
+iframe{
+    position: relative;
+    margin-left: 30px;
+    width: 600px;
+    height: 300px;
+}

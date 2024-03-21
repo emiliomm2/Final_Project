@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeStudy - Registro</title>
+    <link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../imagenes/favicon.ico" type="image/x-icon">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <img src="../imagenes/truenos.png" class="fondo"/>
+    <div class="container">
+        <form action="../php/registro_usuario_be.php" method="POST" class="formulario" novalidate>
+            <a href="../Inicio/index.html">
+                <img src="../imagenes/Logo.png">
+            </a>
+            <div class="padre">
+                <h1>CodeStudy</h1>
+                <div class="nombre">
+                    <label for="">Nombre completo</label>
+                    <input type="text"  name="nombre_completo" id="nombre_completo" minlength="1" required/>
+                    <span class="errorn" aria-live="polite"></span>
+                </div>
+                <div class="email">
+                    <label for="">Correo electrónico</label>
+                    <input type="email" required id="email" name="email">
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="repeat_email">
+                    <label for="">Repite tu correo</label>
+                    <input type="email" required id="repeat_email">
+                    <span class="error2" aria-live="polite"></span>
+                </div>
+                <div class="password">
+                    <label for="">Contraseña</label>
+                    <input type="password" id="password" required minlength="8" maxlength="16" name="password" class="password1">
+                    <span class="errorp" aria-live="polite"></span>
+                </div>
+                <div class="repeat_password">
+                    <label for="">Repite tu contraseña</label>
+                    <input type="password" required minlength="8" maxlength="16" id="repeat_password">
+                    <span class="errorp2" aria-live="polite"></span>
+                </div>
+                <div class="cuenta">
+                    <p>¿Ya tienes una cuenta? <a href="inicio_sesion.html">Inicia sesión</a></p>
+                    <input class="boton" type="submit" value="Registro">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./registro.js"></script>
+</body>
+</html>

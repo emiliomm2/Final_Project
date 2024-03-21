@@ -1,0 +1,64 @@
+.sect1 {
+    width: 100%;
+    min-height: 500px;
+}
+header {
+    width: auto;
+    height: auto;
+}
+video {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height:100%;
+    z-index: -1;
+  }
+hr {
+    width: 100%;
+    position: relative;
+    top: -20px;
+}
+h1{
+    color: white;
+    font-size: 100px;
+}
+.logo{
+    width: 75px;
+    height: 75px;
+}
+p{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    border-color: white;
+    border-radius: 25px;
+    padding: 10px;
+}
+input{
+    color: white;
+    border-color: white;
+    background-color: unset;
+    border-radius: 25px;
+    padding: 10px;
+}
+.botones {
+    text-align: right;
+    position: relative;
+    top: -50px;
+
+}
+footer{
+    position: relative;
+    top: 240px;
+    background-color: lightgray;
+    padding: 5px;
+    width: 100%;
+    bottom: 0px;
+    overflow: hidden;
+    opacity: 0.7;
+    border-radius: 25px;
+}
+body{
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
+}
