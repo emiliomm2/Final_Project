@@ -1,7 +1,7 @@
 # Final_Project
 Proyecto final del grado de DAM 2023/2024 de Emilio José Monsálvez Martínez.
 
-Para poder acceder al proyecto completo, he instalado el software de XAMPP, el cuál me permite la gestión de la base de datos MySQL para el acceso de los usuarios y el servidor web Apache, para así poder utilizar php en el backend.
+Para poder acceder al proyecto completo, he instalado el software de XAMPP, el cuál me permite la gestión de la base de datos MySQL para el acceso de los usuarios y el servidor web Apache, para así poder utilizar php en el backend. Para poder acceder al proyecto, hay que colocar la carpeta con el proyecto en la carpeta htdocs y darle start en la base de datos y en Apache.
 
 La programación del proyecto la estoy realizando con VisualStudio Code, distribuyendo por un lado la carpeta de la página principal, luego una carpeta de las carpetas de registro e inicio de sesión, otra para las páginas a las que accedemos y, por último, una carpeta con archivos .php para el acceso de los usuarios.
 
