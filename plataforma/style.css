@@ -72,7 +72,7 @@ header{
     right: 0;
     height:100%;
     width: 100%;
-    z-index: -1;
+    z-index: -2;
 }
 .main_navigation{
     position: relative;
@@ -103,4 +103,62 @@ iframe{
     margin-left: 30px;
     width: 600px;
     height: 300px;
+}
+
+.user-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.modo-oscuro {
+    background-color: black;
+    color: white;
+}
+
+.modo-oscuro .logo {
+    filter: invert(1);
+}
+
+.modo-oscuro .main_menu{
+    background-color: black;
+}
+
+.modo-oscuro .icon{
+    filter: invert(1);
+}
+
+.modo-oscuro .enlace{
+    color: white;
+}
+.hidden{
+    display: none;
+}
+
+.enlace{
+    text-decoration: none;
+    color: black;
+}
+#perfil-link{
+    border: gray 2px solid;
+    background-color: lightgray;
+    color: red;
+    text-decoration: none;
+    margin-bottom: 20px;
+    padding-left: 28px;
+    
+}
+#cerrar-sesion-btn{
+    border: gray 2px solid;
+    background-color: lightgray;
+    color: red;
+    text-decoration: none;
+}
+
+.seccion{
+    display: none;
+    z-index: 1;
+}
+.seccion .mostrar{
+    display: block;
 }

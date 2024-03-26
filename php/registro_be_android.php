@@ -11,6 +11,13 @@
     $password = hash('sha512', $password);
 
     $query = "INSERT INTO usuarios(nombre_completo, email, password) VALUES ('$nombre_completo', '$email', '$password')";
+
+    $verificar_email = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email='$email' ");
+
+    if(mysqli_num_rows($verificar_email) > 0) {
+        echo 'Este correo ya está registrado';
+        exit();
+    }
         
     $resultado = mysqli_query($conexion, $query);
 
