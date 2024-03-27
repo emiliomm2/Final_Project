@@ -21,6 +21,8 @@
     position: relative;
     align-items: center;
     top: 150px;
+    left: 120px;
+    overflow: auto;
 }
 .main_menu{
     position: fixed;
@@ -39,7 +41,7 @@
     margin-right: 10px;
 }
 .menu_foot{
-    position: relative;
+    position: fixed;
     margin: auto;
     top: 650px;
     right: 150px;
@@ -96,7 +98,8 @@ h1{
     top: -50px;
     left: -400px;
     padding-bottom: 200px;
-    padding-right: 500px;
+    padding-right: 150px;
+    overflow: auto;
 }
 iframe{
     position: relative;
@@ -157,8 +160,18 @@ iframe{
 
 .seccion{
     display: none;
-    z-index: 1;
 }
-.seccion .mostrar{
-    display: block;
+body{
+    max-height: 500px;
+    overflow: auto;
 }
+.video1{
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.frase-celebre{
+    font-style: italic;
+    font-size: large;
+}
+

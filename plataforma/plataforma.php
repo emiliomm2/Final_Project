@@ -5,8 +5,7 @@
     if (!isset($_SESSION['email'])){
         echo '
             <script>
-                alert("Debes iniciar sesión");
-                window.location = "../Registro/inicio_sesion.html"; 
+                alert("Debes iniciar sesión"); 
             </script>
         ';
         session_destroy();
@@ -58,7 +57,7 @@
                     </li>
                     <br>
                     <li>
-                        <a href="#" class="enlace" id="inicio-link">
+                        <a href="#" class="enlace" id="notas-link">
                             <img src="../imagenes/notas.png" class="icon"/> Mis notas
                         </a>
                     </li>
@@ -71,55 +70,97 @@
             <br><br><br>
             <div class="central_contenedor">
                 <img class="background" id="background" src="../imagenes/light.png"/>
-                <header class="site-header">
-                    <form class="form-search" id="form-search" method="get">
-                        <label>
-                        <img class="icon" src="../imagenes/lupa.png"/>
-                                <input type="text" id="header-search-input" class="autoComplete" dir="ltr" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off" maxlength="1000" tabindex="1" placeholder="Buscar" aria-controls="autoComplete_list_1" aria-autocomplete="both" aria-activedescendant>
-                                <ul id="autoComplete_list_1" role="listbox" class="autoComplete_list" hidden>
-                                    <li></li>
-                                </ul>
-                        </label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href=""><img src="../imagenes/mensajes.png" class="icon"/></a>
-                        
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href=""><img src="../imagenes/alertas.png" class="icon"/></a>
-                        
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                            <img src="../imagenes/planta.png" class="user-img" id="user-img"/>
+                <header class="site-header" id="site-header">
+                <img src="../imagenes/planta.png" class="user-img" id="user-img"/>
                             <br>
-                            <a href="" class="hidden" id="perfil-link">Mi perfil</a>
+                            <a href="#" class="hidden" id="perfil-link">Mi perfil</a>
                             <br>
                             <a href="../php/cerrar_sesion.php" class="hidden" id="cerrar-sesion-btn">Cerrar sesión</a>
-                    </form>
+                    
                     
                 </header>
                 <div class="titulo">
                     <h1>Bienvenido <?php echo "$username";?></h1>
                 </div>
                 <div class="sigue_aprendiendo">
-                    <div class="inicio" class="seccion">
+                    <div id="inicio" class="seccion">
                         <h3>Bienvenido a CodeStudy</h3>
                         <h3>Es el momento de aprender a programar</h3>
                         <br>
                         <a class="video">
-                            <iframe src="../videos/video_introduccion.mp4" frameborder="0" allowfullscreen data-ready="true"></iframe>
+                            <iframe src="../videos/video_introduccion.mp4" frameborder="0" allowfullscreen data-ready="true" sandbox></iframe>
                             <p class="titulo_video"></p>
                         </a>
                     </div>
                     <div id="aprender" class="seccion">
-                        <iframe src="../videos/video_introduccion.mp4"frameborder="0"allowfullscreen data-ready="true"></iframe>
+                        <div id="menu-videos">
+                            <button class="videos" onclick="mostrarVideo('video1')">Video 1</button>
+                            <button class="videos" onclick="mostrarVideo('video2')">Video 2</button>
+                            <button class="videos" onclick="mostrarVideo('video3')">Video 3</button>
+                        </div>
+                        <div id="contenedor-videos">
+                            <div id="video1" class="video-contenedor">
+                                <video width="480" height="320" controls>
+                                    <source src="../videos/Video1.mp4" type="video/mp4"/>
+                                </video>
+                                <br>
+                                <h3>Clase de prueba 1</h3>
+                                <p>Este es el primer vídeo de prueba,</p> <p>donde se podría poner texto si se quisiera</p>
+                            </div>
+                            <div id="video2" class="video-contenedor" style="display: none;">
+                                <video width="480" height="320" controls>
+                                    <source src="../videos/Video2.mp4" type="video/mp4"/>
+                                </video>
+                                <br>
+                                <h3>Clase de prueba 2</h3>
+                            </div>
+                            <div id="video3" class="video-contenedor" style="display: none;">
+                                <video width="480" height="320" controls>
+                                    <source src="../videos/Video3.mp4" type="video/mp4"/>
+                                </video>
+                                <br>
+                                <h3>Clase de prueba 3</h3>
+                            </div>
+                        </div>
                     </div>
                     <div id="actividades" class="seccion">
-                        <p>Actividad número 1</p>
+                        <h3>Actividad número 1</h3>
+                        <a href="../actividades/actividad1.pdf" download="Actividad1">
+                            <img src="../imagenes/actividad1.png" width="50" height="50"/>
+                        </a>
+                        <form id="uploadForm" action="../php/uploads.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="submit" value="Subir archivo" name="submit">
+                        </form>
+                        <br><br><br>
+                        <h3>Actividad número 2</h3>
+                        <a href="../actividades/actividad1.pdf" download="Actividad2">
+                            <img src="../imagenes/actividad1.png" width="50" height="50"/>
+                        </a>
+                        <form id="uploadForm" action="../php/uploads.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="submit" value="Subir archivo" name="submit">
+                        </form>
                     </div>
                     <div id="notas" class="seccion">
-                        <p>Aquí puedes tomar notas para un futuro</p>
+                        <p>Aquí puedes tomar tus notas</p>
+                        <textarea id="texto-notas" rows="10" cols="50"></textarea><br>
+                        <button id="descargar-notas">Guardar</button>
                     </div>
                     <div id="perfil" class="seccion">
                     <img src="../imagenes/planta.png" class="user-img" id="cambio-foto-perfil"/>
+                    <select id="opcion-foto-perfil">
+                        <option value="planta.png">Planta</option>
+                        <option value="hombre.png">Hombre</option>
+                        <option value="mujer.png">Mujer</option>
+                        <option value="personalizada">Subir imagen personalizada</option>
+                    </select>
+                    <input type="file" id="nueva-foto-perfil" style="display: none;">
+                    <button id="boton-guardar-foto">Guardar</button>
                     <p><?php echo "$username";?></p>
+                    <p><?php echo "$email";?></p>
+                    <p class="frase-celebre">Cuando las cosas se pongan difíciles, recuerda que el<br> crecimiento ocurre fuera de la zona de confort.</p>
+                    <a href="../php/cerrar_sesion.php"><button>Cerrar sesión</button></a>
                     </div>
                 </div>
                 
