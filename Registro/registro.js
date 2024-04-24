@@ -1,5 +1,5 @@
 const form = document.getElementsByTagName("form")[0];
-
+//Llamada a los elementos para traerlos al JS
 const nombre_completo = document.getElementById("nombre_completo");
 const nombreError = document.querySelector("#nombre_completo + span.errorn");
 const email = document.getElementById("email");
@@ -11,6 +11,7 @@ const pError = document.querySelector("#password + span.errorp");
 const repeat_password = document.getElementById("repeat_password");
 const pError2 = document.querySelector("#repeat_password + span.errorp2");
 
+//Comprobación del correo, si no muestra error
 email.addEventListener("input", function (event) {
 
   if (email.validity.valid) {
@@ -22,6 +23,7 @@ email.addEventListener("input", function (event) {
   }
 });
 
+//Comprobación de que todas las entradas están correctamente, si no, llama a métodos de error
 form.addEventListener("submit", function (event) {
   if (!email.validity.valid) {
     showError();
@@ -45,6 +47,7 @@ form.addEventListener("submit", function (event) {
   }
 });
 
+//Error del email
 function showError() {
   if (email.validity.valueMissing) {
     emailError.textContent = "Debe introducir una dirección de correo electrónico.";
@@ -56,7 +59,7 @@ function showError() {
 
   emailError.className = "error activo";
 }
-
+//Comprobación de repetir correo, si no muestra error
 repeat_email.addEventListener("input", function(event) {
     if(repeat_email.value == email.value) {
         email2Error.innerHTML = "";
@@ -65,14 +68,14 @@ repeat_email.addEventListener("input", function(event) {
         showError2();
     }
 });
-
+//Error del repetir email
 function showError2() {
     if(repeat_email.value != email.value){
         email2Error.textContent = "Las dos direcciones deben ser iguales";
     }
     email2Error.className = "error2 activo";
 }
-
+//Comprobación de la contraseña, si no muestra error
 password.addEventListener("input", function(event) {
     if(password.validity.valid){
         pError.innerHTML = "";
@@ -81,7 +84,7 @@ password.addEventListener("input", function(event) {
         showError3();
     }
 });
-
+//Error de la contraseña
 function showError3() {
     if (password.validity.valueMissing) {
         pError.textContent = "Debe introducir una contraseña.";
@@ -93,7 +96,7 @@ function showError3() {
     
       emailError.className = "error3 activo";
 }
-
+//Comprobación del repetir contraseña, si no muestra error
 repeat_password.addEventListener("input", function(event) {
     if(repeat_password.value == password.value) {
         pError2.innerHTML = "";
@@ -103,6 +106,7 @@ repeat_password.addEventListener("input", function(event) {
     }
 });
 
+//Error repetir contraseña
 function showError4() {
     if(repeat_password.value != password.value){
         pError2.textContent = "Las dos contraseñas deben ser iguales.";
@@ -110,6 +114,7 @@ function showError4() {
     pError2.className = "error4 activo";
 }
 
+//Comprobación del nombre, si no muestra error
 nombre_completo.addEventListener("input", function (event) {
     if (nombre_completo.value.length > 0) {
         nombreError.innerHTML = "";
@@ -118,7 +123,7 @@ nombre_completo.addEventListener("input", function (event) {
         showErrorN();
     }
 });
-
+//Error del nombre
 function showErrorN() {
     if (nombre_completo.value.length <= 0) {
         nombreError.textContent = "Debe introducir un nombre.";

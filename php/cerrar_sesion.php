@@ -1,3 +1,4 @@
+<!--Cierre de sesión-->
 <?php
 
     session_start();

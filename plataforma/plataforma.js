@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var mainNavigation = document.querySelector(".main_navigation");
     var backgroundImg = document.getElementById("background");
     
+    //Click en el botón de modo oscuro
     modoOscuroBoton.addEventListener("click", function() {
-        
+        //Cambio entre modo oscuro y claro para cambiar el menú y la imagen de fondo
         if (modoOscuroBoton.textContent === "Modo oscuro") {
             modoOscuroBoton.textContent = "Modo claro";
             mainNavigation.classList.add("modo-oscuro");
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
             backgroundImg.src = "../imagenes/light.png"; 
         }
     });
-
+    //Mostrar las distintas secciones y ocultar las otras
     function mostrarSeccion(id) {
         const secciones = document.getElementsByClassName('seccion');
         for (var i = 0; i < secciones.length; i++){
@@ -49,20 +50,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const cerrarSesionBtn = document.getElementById('cerrar-sesion-btn');
     const header = document.getElementById('site-header');
     
-    
+    //Mostrar las opciones de cerrar sesión y perfil
     userImg.addEventListener('click', () => {
         
         perfilLink.classList.remove('hidden');
         cerrarSesionBtn.classList.remove('hidden');
     });
     
-    
+    //Ocultar las opciones de cerrar sesión y perfil
     header.addEventListener('mouseleave', () => {
         
         perfilLink.classList.add('hidden');
         cerrarSesionBtn.classList.add('hidden');
     });
-
+    //Botón de subir un archivo
     document.getElementById('uploadForm').addEventListener('submit', function(event) {
         var fileInput = document.getElementById('fileToUpload');
         if (fileInput.files.length === 0) {
@@ -70,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
         }
     });
-
+    //Opción de descargar las notas en formato .txt
     document.getElementById('descargar-notas').addEventListener('click', function() {
         var contenido = document.getElementById('texto-notas').value;
         descargarNotas(contenido);
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
     };
-
+    //Fotos de perfil, elección, cambio, subida
     document.getElementById('opcion-foto-perfil').addEventListener('change', function(event) {
         var seleccion = event.target.value;
         
@@ -103,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    
+    //Subida de la foto de perfil que se elija
     document.getElementById('nueva-foto-perfil').addEventListener('change', function(event) {
         
         var archivo = event.target.files[0];
@@ -117,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
 });
+//Función para videos
 function mostrarVideo(id) {
         
     var videos = document.getElementsByClassName('video-contenedor');

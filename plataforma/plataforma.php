@@ -1,3 +1,6 @@
+<!--Comprobación de la sesión para obtener nombre de usuario,
+comprobar el tiempo en sesión (max 1h) y si se accede directo
+a la página, no deja por no iniciar sesión-->
 <?php
 
     session_start();
@@ -5,7 +8,8 @@
     if (!isset($_SESSION['email'])){
         echo '
             <script>
-                alert("Debes iniciar sesión"); 
+                alert("Debes iniciar sesión");
+                window.location = "../Registro/inicio_sesion.html"
             </script>
         ';
         session_destroy();
@@ -35,7 +39,7 @@
     </head>
     <body>
         <div class="contenedor">
-            <nav class="main_navigation">
+            <nav class="main_navigation"><!--Menú principal-->
                 <ul class="main_menu">
                     <li><a href="plataforma.php"><img src="../imagenes/Logo.png" class="logo"/></a></li>
                     <li>
@@ -68,19 +72,19 @@
                 </ul>
             </nav>
             <br><br><br>
-            <div class="central_contenedor">
-                <img class="background" id="background" src="../imagenes/light.png"/>
+            <div class="central_contenedor"><!--Contenedor central con distintas secciones-->
+                <img class="background" id="background" src="../imagenes/light.png"/><!--Imagen de perfil-->
                 <header class="site-header" id="site-header">
                 <img src="../imagenes/planta.png" class="user-img" id="user-img"/>
                             <br>
                             <a href="#" class="hidden" id="perfil-link">Mi perfil</a>
                             <br>
-                            <a href="../php/cerrar_sesion.php" class="hidden" id="cerrar-sesion-btn">Cerrar sesión</a>
+                            <a href="../php/cerrar_sesion.php" class="hidden" id="cerrar-sesion-btn">Cerrar sesión</a><!--Posibilidad de cerrar sesión-->
                     
                     
                 </header>
                 <div class="titulo">
-                    <h1>Bienvenido <?php echo "$username";?></h1>
+                    <h1>Bienvenido <?php echo "$username";?></h1><!--Extracción de nombre de usuario-->
                 </div>
                 <div class="sigue_aprendiendo">
                     <div id="inicio" class="seccion">
@@ -92,7 +96,7 @@
                             <p class="titulo_video"></p>
                         </a>
                     </div>
-                    <div id="aprender" class="seccion">
+                    <div id="aprender" class="seccion"><!--Sección aprender con diversas ventanas de videos-->
                         <div id="menu-videos">
                             <button class="videos" onclick="mostrarVideo('video1')">Video 1</button>
                             <button class="videos" onclick="mostrarVideo('video2')">Video 2</button>
@@ -123,12 +127,12 @@
                             </div>
                         </div>
                     </div>
-                    <div id="actividades" class="seccion">
+                    <div id="actividades" class="seccion"><!--Sección de actividades para subirlas-->
                         <h3>Actividad número 1</h3>
                         <a href="../actividades/actividad1.pdf" download="Actividad1">
                             <img src="../imagenes/actividad1.png" width="50" height="50"/>
                         </a>
-                        <form id="uploadForm" action="../php/uploads.php" method="post" enctype="multipart/form-data">
+                        <form id="uploadForm" action="../php/uploads.php" method="post" enctype="multipart/form-data"><!--Subida de la actividad1-->
                             <input type="file" name="fileToUpload" id="fileToUpload">
                             <input type="submit" value="Subir archivo" name="submit">
                         </form>
@@ -137,12 +141,12 @@
                         <a href="../actividades/actividad1.pdf" download="Actividad2">
                             <img src="../imagenes/actividad1.png" width="50" height="50"/>
                         </a>
-                        <form id="uploadForm" action="../php/uploads.php" method="post" enctype="multipart/form-data">
+                        <form id="uploadForm" action="../php/uploads.php" method="post" enctype="multipart/form-data"><!--Subida de la actividad2-->
                             <input type="file" name="fileToUpload" id="fileToUpload">
                             <input type="submit" value="Subir archivo" name="submit">
                         </form>
                     </div>
-                    <div id="notas" class="seccion">
+                    <div id="notas" class="seccion"><!--Sección de notas-->
                         <p>Aquí puedes tomar tus notas</p>
                         <textarea id="texto-notas" rows="10" cols="50"></textarea><br>
                         <button id="descargar-notas">Guardar</button>
@@ -160,7 +164,7 @@
                     <p><?php echo "$username";?></p>
                     <p><?php echo "$email";?></p>
                     <p class="frase-celebre">Cuando las cosas se pongan difíciles, recuerda que el<br> crecimiento ocurre fuera de la zona de confort.</p>
-                    <a href="../php/cerrar_sesion.php"><button>Cerrar sesión</button></a>
+                    <a href="../php/cerrar_sesion.php"><button>Cerrar sesión</button></a><!--Cierre de sesion en el perfil-->
                     </div>
                 </div>
                 

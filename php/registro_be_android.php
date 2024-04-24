@@ -1,3 +1,4 @@
+<!--Registro de la aplicación Android Studio-->
 <?php
     $conexion = mysqli_connect("localhost","root", "", "usuarios_db");
 
@@ -8,20 +9,22 @@
     $nombre_completo = $_POST['nombre_completo'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $password = hash('sha512', $password);
+    $password = hash('sha512', $password);//Algoritmo de seguridad
 
     $query = "INSERT INTO usuarios(nombre_completo, email, password) VALUES ('$nombre_completo', '$email', '$password')";
 
     $verificar_email = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email='$email' ");
 
     if(mysqli_num_rows($verificar_email) > 0) {
+        //Si hay alguna fila con el email registrado, no deja registrar
         echo 'Este correo ya está registrado';
         exit();
     }
         
-    $resultado = mysqli_query($conexion, $query);
+    $resultado = mysqli_query($conexion, $query);//Si resultado = true, ingreso en la base de datos
 
     if ($resultado){
+        //Si todo correcto, registro completado e ingreso en la base de datos
         echo "registro completado correctamente";
     } else{
         echo "error";
