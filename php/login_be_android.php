@@ -1,4 +1,3 @@
-<!--Conexión de la aplicación de Android Studio-->
 <?php
     $conexion = mysqli_connect("localhost","root", "", "usuarios_db");
 
@@ -8,7 +7,7 @@
 
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $password = hash('sha512', $password);//Algoritmo de seguridad
+    $password = hash('sha512', $password);
 
     $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email='$email' and password='$password' ");
 
